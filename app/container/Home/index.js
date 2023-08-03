@@ -1,5 +1,12 @@
 import React from 'react';
-import {View, Text, TextInput, SafeAreaView} from 'react-native';
+import {
+  View,
+  Text,
+  TextInput,
+  SafeAreaView,
+  TouchableOpacity,
+} from 'react-native';
+import {WrapperContainerBase} from '../../components';
 class Home extends React.Component {
   constructor(props) {
     super(props);
@@ -9,24 +16,38 @@ class Home extends React.Component {
   }
   render() {
     return (
-      <View
-        style={{
-          flex: 1,
-          justifyContent: 'center',
-          marginHorizontal: 16,
-        }}>
-        <TextInput placeholder="Enter text here"/>
-        <View></View>
-        <Text
+      <WrapperContainerBase>
+        <View
           style={{
             flex: 1,
-            alignItems: 'center',
             justifyContent: 'center',
-            backgroundColor: 'white',
+            marginHorizontal: 8,
           }}>
-          Home Screen
-        </Text>
-      </View>
+          <TouchableOpacity style={{height: 60, width: '100%'}}>
+            <Text>Enter text here</Text>
+          </TouchableOpacity>
+          <View
+            style={{
+              flex: 1,
+              alignItems: 'center',
+              justifyContent: 'center',
+              backgroundColor: 'white',
+            }}>
+            <Text>Home Screen</Text>
+          </View>
+
+          <TouchableOpacity
+            style={{
+              position: 'absolute',
+              width: 40,
+              height: 40,
+              backgroundColor: 'grey',
+              bottom: 10,
+              right: 10,
+              borderRadius: 40 / 2,
+            }}></TouchableOpacity>
+        </View>
+      </WrapperContainerBase>
     );
   }
 }
